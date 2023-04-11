@@ -16,14 +16,15 @@ api = Flask(__name__)
 
 @api.route('/people/<int:number>/', methods=['GET'])
 def get_people(number):
-      if 1<=number<=100:   
-        time.sleep(random.randint(1, 2500)/1000)
+      random_delay()
+      if 1<=number<=100:
         return json.dumps(people)
       else:
         return json.dumps(people_error),404      
 
 @api.route('/planets/<int:number>/', methods=['GET'])
 def get_planets(number):
+      random_delay()
       if 1<=number<=100:
         return json.dumps(planets)
       else:
@@ -32,10 +33,14 @@ def get_planets(number):
 
 @api.route('/starships/<int:number>/', methods=['GET'])
 def get_starships(number):
+      random_delay()
       if 1<=number<=100:
         return json.dumps(starships)
       else:
         return json.dumps(starships_error),404  
+
+def random_delay():
+  time.sleep(random.randint(1, 2500)/1000)
 
 if __name__ == '__main__':
     api.run('0.0.0.0',8800,debug=True)

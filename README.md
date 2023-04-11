@@ -1,5 +1,29 @@
-This is a POC project with Python for testing a fake API server both for functional testing and non-functional testing
-## Installation
+## This is a POC project with Python for testing a fake API server both for functional testing and non-functional testing
+# HOW TO USE
+
+# create the docker image
+
+```sh
+./create_docker_image.sh
+```
+
+
+#  run performance tests
+```sh
+./performance_tests.sh
+```
+
+# run functional tests
+```sh
+./functional_tests.sh
+```
+
+Server logs are stored in record.log file
+
+
+# MANUAL INSTALLATION:
+
+
 
 # install python 3
 
@@ -24,29 +48,8 @@ pip freeze > requirements.txt
 ```
 
 
-# create the docker image
-
-```sh
-docker build -t service-image .
-```
 
 #  run the docker container locally
 ```sh
 docker run -d -p 5001:5001 flask-rest-api
 ```
-
-
-#  run performance tests
-```sh
-k6 run -u 10 -d 60s ./nonFunctionalTests/performance-test.js
-```
-
-# run functional tests
-```sh
-pytest functionalTests
-```
-
-
-
-
-python3 -m data.data 
