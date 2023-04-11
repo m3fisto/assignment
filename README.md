@@ -12,31 +12,36 @@ brew install python
 https://phoenixnap.com/kb/install-pip-mac
 
 
-# install flask
+# install pip requirements
 ```sh
-pip install flask
+pip install flask requests jsonpath-ng pytest
 ```
-# install robot
-pip install robotframework-seleniumlibrary
 
-# install flask
+
+# freeze requirements
+```sh
 pip freeze > requirements.txt
-
-# install requests
-pip install requests
+```
 
 
 # create the docker image
-docker build -t flask-rest-api .
 
+```sh
+docker build -t flask-rest-api .
+```
 
 #  run the docker container locally
-docker run -d -p 5000:5000 flask-rest-api
-
+```sh
+docker run -d -p 5001:5001 flask-rest-api
+```
 
 
 #  run performance tests
+```sh
 k6 run -u 10 -d 60s ./nonFunctionalTests/performance-test.js
+```
 
-
-pip install jsonpath-ng
+# run functional tests
+```sh
+pytest functionalTests
+```
