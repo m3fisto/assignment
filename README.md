@@ -27,7 +27,7 @@ pip freeze > requirements.txt
 # create the docker image
 
 ```sh
-docker build -t flask-rest-api .
+docker build -t service-image .
 ```
 
 #  run the docker container locally
