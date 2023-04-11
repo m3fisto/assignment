@@ -1,18 +1,38 @@
+# from ..data import data
 import requests
-import json
-from jsonpath_ng import jsonpath, parse
 
-baseUrl = 'http://localhost:8085'
+baseUrl = 'http://localhost:8800'
+
 def test_get_people() :
     path = "/people/12"
     response = requests.get(url=baseUrl+path)
-    responseJson = json.loads(response.text)
     assert response.status_code == 200
-    assert jsonpath.jsonpath(responseJson,'$.data.name')[0] == 'Obi Wan Kenobi'
-   # assert jsonpath.jsonpath(responseJson,'$.data.id')[0] == 2
+    assert response.json() == [{"name": "Obi Wan Kenobi","sideOfForce":"Light"}]
+    # assert response.json() == data.people
 
 def test_get_people_error() :
     path = "/people/102"
     response = requests.get(url=baseUrl+path)
-    responseJson = json.loads(response.text)
+    assert response.status_code == 404
+
+def test_get_planet() :
+    path = "/planets/12"
+    response = requests.get(url=baseUrl+path)
+    assert response.status_code == 200
+    assert response.json() == [{"planet_name": "Dagobah","goesOnVacations": "Darth Vader"}]
+
+def test_get_planet_error() :
+    path = "/planets/102"
+    response = requests.get(url=baseUrl+path)
+    assert response.status_code == 404
+
+def test_get_starships() :
+    path = "/starships/12"
+    response = requests.get(url=baseUrl+path)
+    assert response.status_code == 200
+    assert response.json() == [{"starship_name": "Millennium Falcon","pilot": "Han Solo"}]
+
+def test_get_starships_error() :
+    path = "/starships/102"
+    response = requests.get(url=baseUrl+path)
     assert response.status_code == 404

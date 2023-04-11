@@ -3,7 +3,7 @@ import { sleep, check } from 'k6';
 
 export default function () {
 
-  const res = http.get('http://127.0.0.1:5001/people/12/');
+  const res = http.get('http://127.0.0.1:8800/people/12/');
 
   sleep(1);
 

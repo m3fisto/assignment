@@ -3,7 +3,7 @@ import logging
 import time
 import random
 
-logging.basicConfig(filename='record.log', level=logging.INFO)
+logging.basicConfig(filename='../record.log', level=logging.INFO)
 
 people = [{"name": "Obi Wan Kenobi","sideOfForce":"Light"}]
 people_error = [{"message": "Person Not Found"},{"Status Code": "404"}]
@@ -38,4 +38,4 @@ def get_starships(number):
         return json.dumps(starships_error),404  
 
 if __name__ == '__main__':
-    api.run('0.0.0.0',5001,debug=True)
+    api.run('0.0.0.0',8800,debug=True)

@@ -45,3 +45,8 @@ k6 run -u 10 -d 60s ./nonFunctionalTests/performance-test.js
 ```sh
 pytest functionalTests
 ```
+
+
+
+
+python3 -m data.data 
