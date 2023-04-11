@@ -53,3 +53,6 @@ pip freeze > requirements.txt
 ```sh
 docker run -d -p 5001:5001 flask-rest-api
 ```
+
+
+ pip3 install robotframework-requests.

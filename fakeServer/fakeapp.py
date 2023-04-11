@@ -2,15 +2,8 @@ from flask import Flask, json
 import logging
 import time
 import random
-
+import data
 logging.basicConfig(filename='../record.log', level=logging.INFO)
-
-people = [{"name": "Obi Wan Kenobi","sideOfForce":"Light"}]
-people_error = [{"message": "Person Not Found"},{"Status Code": "404"}]
-planets = [{"planet_name": "Dagobah","goesOnVacations": "Darth Vader"}]
-planets_error = [{"message": "Planet Not Found"},{"Status Code": "404"}]
-starships = [{"starship_name": "Millennium Falcon","pilot": "Han Solo"}]
-starships_error = [{"message": "StarShip Not Found"},{"Status Code": "404"}]
 
 api = Flask(__name__)
 
@@ -18,26 +11,26 @@ api = Flask(__name__)
 def get_people(number):
       random_delay()
       if 1<=number<=100:
-        return json.dumps(people)
+        return json.dumps(data.people)
       else:
-        return json.dumps(people_error),404      
+        return json.dumps(data.people_error),404      
 
 @api.route('/planets/<int:number>/', methods=['GET'])
 def get_planets(number):
       random_delay()
       if 1<=number<=100:
-        return json.dumps(planets)
+        return json.dumps(data.planets)
       else:
-        return json.dumps(planets_error),404  
+        return json.dumps(data.planets_error),404  
       
 
 @api.route('/starships/<int:number>/', methods=['GET'])
 def get_starships(number):
       random_delay()
       if 1<=number<=100:
-        return json.dumps(starships)
+        return json.dumps(data.starships)
       else:
-        return json.dumps(starships_error),404  
+        return json.dumps(data.starships_error),404  
 
 def random_delay():
   time.sleep(random.randint(1, 2500)/1000)
