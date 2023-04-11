@@ -23,7 +23,6 @@ jsonpath-ng==1.5.3
 MarkupSafe==2.1.1
 outcome==1.2.0
 packaging==21.3
-# playwright==1.22.0
 pluggy==1.0.0
 ply==3.11
 protobuf==3.19.4
@@ -34,7 +33,6 @@ PySocks==1.7.1
 pytest==7.1.2
 pytest-base-url==2.0.0
 pytest-flask==1.2.0
-# pytest-playwright==0.3.0
 pytest-reporter==0.5.2
 pytest-reporter-html1==0.8.2
 python-slugify==6.1.2

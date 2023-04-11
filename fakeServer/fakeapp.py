@@ -3,7 +3,7 @@ import logging
 import time
 import random
 import data
-logging.basicConfig(filename='../record.log', level=logging.INFO)
+logging.basicConfig(filename='../app.log', level=logging.INFO)
 
 api = Flask(__name__)
 

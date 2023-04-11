@@ -38,7 +38,7 @@ https://phoenixnap.com/kb/install-pip-mac
 
 # install pip requirements
 ```sh
-pip install flask requests jsonpath-ng pytest
+pip install flask requests pytest
 ```
 
 
@@ -51,8 +51,9 @@ pip freeze > requirements.txt
 
 #  run the docker container locally
 ```sh
-docker run -d -p 5001:5001 flask-rest-api
+docker run -d --name api-sw -p 8800:8800 api-sw
 ```
-
-
- pip3 install robotframework-requests.
+You can reach the service on your local browser on : 
+* localhost:8800/people/-number-   
+* localhost:8800/planets/-number-   
+* localhost:8800/starships/-number-   

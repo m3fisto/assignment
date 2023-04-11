@@ -1,4 +1,3 @@
-# from ..data import data
 import requests
 
 baseUrl = 'http://localhost:8800'
