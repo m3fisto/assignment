@@ -1,6 +1,17 @@
 ## This is a POC project with Python for testing a fake API server both for functional testing and non-functional testing
 # HOW TO USE
 
+
+## install python 3
+## install docker
+
+# install pip requirements
+```sh
+pip --no-cache-dir install -r requirements.txt
+```
+
+
+
 # create the docker image
 ```sh
 docker build -t api-sw .
@@ -8,6 +19,12 @@ docker build -t api-sw .
 # start docker container
 ```sh
 docker run -d --name api-sw -p 8800:8800 api-sw
+
+You can reach the service on your local browser on : 
+* localhost:8800/people/-number-   
+* localhost:8800/planets/-number-   
+* localhost:8800/starships/-number-   
+
 ```
 #  run performance tests
 ```sh
@@ -22,40 +39,7 @@ An html report of the functional tests is generated in reportFT.html
 Server logs are stored in server_app.log file
 
 
-# MANUAL INSTALLATION:
-
-
-
-# install python 3
-
-```sh
-brew install python
-```
-
-# install pip
-
-https://phoenixnap.com/kb/install-pip-mac
-
-
-# install pip requirements
-```sh
-pip --no-cache-dir install -r requirements.txt
-```
-
-
-
-
-#  run the docker container locally
-```sh
-docker run -d --name api-sw -p 8800:8800 api-sw
-```
-You can reach the service on your local browser on : 
-* localhost:8800/people/-number-   
-* localhost:8800/planets/-number-   
-* localhost:8800/starships/-number-   
-
-
-
 # run everything without starting manual the service
 ```sh
-pytest --html=report.html  --benchmark-min-rounds=50  ```
+pytest --html=report.html  --benchmark-min-rounds=50  
+```
