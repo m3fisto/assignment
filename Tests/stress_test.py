@@ -1,4 +1,3 @@
-import pytest
 import requests
 baseUrl = 'http://localhost:8800/people/12'
 def request_people():
