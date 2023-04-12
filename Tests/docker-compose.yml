@@ -1,0 +1,6 @@
+version: '2'
+services:
+  api-sw:
+    image: "api-sw"
+    ports:
+      - "8800:8800"

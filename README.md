@@ -10,15 +10,15 @@
 
 #  run performance tests
 ```sh
-./performance_tests.sh
+./run_performance_tests.sh
 ```
-
+An html report of the performance tests is generated in reportNFT.html
 # run functional tests
 ```sh
-./functional_tests.sh
+./run_functional_tests.sh
 ```
-
-Server logs are stored in record.log file
+An html report of the functional tests is generated in reportFT.html
+Server logs are stored in server_app.log file
 
 
 # MANUAL INSTALLATION:
@@ -40,8 +40,8 @@ https://phoenixnap.com/kb/install-pip-mac
 ```sh
 pip install flask requests pytest
 ```
-
-
+pip install pytest-html
+pip install pytest-docker
 # freeze requirements
 ```sh
 pip freeze > requirements.txt
