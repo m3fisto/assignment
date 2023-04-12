@@ -5,9 +5,9 @@
 ## install python 3
 ## install docker
 
-# install pip requirements
+# install python dependencies
 ```sh
-pip --no-cache-dir install -r requirements.txt
+•	pip install pytest requests pytest-docker pytest-benchmark pytest-html
 ```
 
 
