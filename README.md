@@ -2,20 +2,21 @@
 # HOW TO USE
 
 # create the docker image
-
 ```sh
-./create_docker_image.sh
+docker build -t api-sw .
 ```
-
-
+# start docker container
+```sh
+docker run -d --name api-sw -p 8800:8800 api-sw
+```
 #  run performance tests
 ```sh
-./run_performance_tests.sh
+pytest ./Tests/stress_test.py --html=reportNFT.html --benchmark-min-rounds=50 
 ```
 An html report of the performance tests is generated in reportNFT.html
 # run functional tests
 ```sh
-./run_functional_tests.sh
+pytest ./Tests/service_test.py --html=reportFT.html
 ```
 An html report of the functional tests is generated in reportFT.html
 Server logs are stored in server_app.log file
@@ -38,14 +39,9 @@ https://phoenixnap.com/kb/install-pip-mac
 
 # install pip requirements
 ```sh
-pip install flask requests pytest
+pip --no-cache-dir install -r requirements.txt
 ```
-pip install pytest-html
-pip install pytest-docker
-# freeze requirements
-```sh
-pip freeze > requirements.txt
-```
+
 
 
 
@@ -57,3 +53,9 @@ You can reach the service on your local browser on :
 * localhost:8800/people/-number-   
 * localhost:8800/planets/-number-   
 * localhost:8800/starships/-number-   
+
+
+
+# run everything without starting manual the service
+```sh
+pytest --html=report.html  --benchmark-min-rounds=50  ```

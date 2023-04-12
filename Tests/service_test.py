@@ -6,7 +6,6 @@ def test_get_people() :
     response = requests.get(url=baseUrl+path)
     assert response.status_code == 200
     assert response.json() == [{"name": "Obi Wan Kenobi","sideOfForce":"Light"}]
-    # assert response.json() == data.people
 
 def test_get_people_error() :
     path = "/people/102"
