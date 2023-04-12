@@ -16,7 +16,7 @@ def is_responsive(url):
 
 
 @pytest.fixture(scope="session")
-def http_service(docker_ip, docker_services):
+def http_service(docker_services):
     docker_services.wait_until_responsive(
         timeout=30.0, pause=0.1, check=lambda: is_responsive(url)
     )
