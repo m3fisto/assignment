@@ -1,8 +1,9 @@
 import pytest
 import requests
 from requests.exceptions import ConnectionError
+from src import data
 
-url = "http://127.0.0.1:8800/people/12"
+url = data.fullUrl
 
 def is_responsive(url):
     try:

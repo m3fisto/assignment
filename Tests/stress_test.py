@@ -1,7 +1,8 @@
 import requests
-baseUrl = 'http://localhost:8800/people/12'
+from src import data
+
 def request_people():
-    return requests.get(url=baseUrl)
+    return requests.get(url=data.fullUrl)
 
 def test_api_sw(benchmark):
     response = benchmark(request_people)
