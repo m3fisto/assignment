@@ -4,3 +4,5 @@ services:
     image: "api-sw"
     ports:
       - "8800:8800"
+    volumes:
+      - ../logs:/app/logs  
